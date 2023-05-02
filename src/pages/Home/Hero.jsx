@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="my-container">
       <div className="flex flex-col lg:flex-row justify-center items-center">
-        <div className="mx-auto lg:ml-28 lg:w-1/2">
+        <div className="mx-auto  lg:w-1/2">
           <h1 className="text-2xl lg:text-5xl font-bold mb-3 lg:mb-8 text-center lg:text-left leading-6">
             Explore Mouth-Watering Recipes on
             <span className="text-secondary"> FoodFusion</span>

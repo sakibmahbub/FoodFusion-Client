@@ -9,9 +9,9 @@ const Header = () => {
       <div className="relative flex items-center justify-between">
         {/* Logo Section */}
         <Link to="/" className="inline-flex items-center">
-          <span className="ml-2 text-3xl font-bold tracking-wide text-gray-800">
-            FoodFusion
-          </span>
+          <h1 className="ml-2 text-3xl font-bold tracking-wide text-gray-800">
+            Food<span className="text-secondary">Fusion</span>
+          </h1>
         </Link>
 
         {/* Nav Items Section */}
@@ -59,7 +59,7 @@ const Header = () => {
                   <div>
                     <Link to="/" className="inline-flex items-center">
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        FoodFusion
+                        Food
                       </span>
                     </Link>
                   </div>
