@@ -14,9 +14,9 @@ const Recipe = ({ recipe }) => {
     favorite,
   } = recipe;
   return (
-    <div className="card w-full bg-black shadow-xl image-full">
+    <div className="card w-full bg-secondary shadow-xl image-full">
       <figure>
-        <img src={img} alt="food" />
+        <img src="" alt="food" />
       </figure>
       <div className="card-body">
         <h2 className="card-title mb-3">{recipe_name}</h2>
@@ -24,7 +24,7 @@ const Recipe = ({ recipe }) => {
           <span className="font-semibold">Ingredients : </span>
           {ingredients}
         </p>
-        <p>
+        <p className="mt-2">
           <span className="font-semibold">Cooking method : </span>
           {cooking_method}
         </p>

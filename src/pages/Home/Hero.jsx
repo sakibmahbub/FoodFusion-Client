@@ -20,7 +20,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="mx-auto lg:w-1/2">
-          <img src="pizza.jpg" alt="" className="mx-auto lg:mx-0" />
+          <img
+            src="https://i.ibb.co/gDHDsXd/8.jpg"
+            alt=""
+            className="mx-auto lg:mx-0 rounded-lg"
+          />
         </div>
       </div>
     </div>

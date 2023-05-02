@@ -21,7 +21,7 @@ const Chef = ({ chef }) => {
         </p>
         <div className="card-actions justify-start mt-5">
           <Link to={`/chefs/${id}`}>
-            <button className="btn btn-secondary">View Recipes</button>
+            <button className="btn btn-outline">View Recipes</button>
           </Link>
         </div>
       </div>
