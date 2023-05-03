@@ -4,9 +4,18 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className=" px-4 py-5 bg-red-50 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24 relative rounded-lg z-20">
       <div className="relative flex items-center justify-between">
@@ -43,8 +52,12 @@ const Header = () => {
                 </div>
               </label>
             )}
+          </li>
+          <li>
             {user ? (
-              <button className="btn btn-secondary">Logout</button>
+              <button onClick={handleLogout} className="btn btn-secondary">
+                Logout
+              </button>
             ) : (
               <Link to="/login">
                 <button className="btn btn-secondary">Login</button>

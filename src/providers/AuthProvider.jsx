@@ -22,9 +22,21 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  
+  const logOut = () => {
+    return signOut(auth);
+  };
 
-  const authInfo = { user, createUser, logIn };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
+      setUser(loggedUser);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const authInfo = { user, createUser, logIn, logOut };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
