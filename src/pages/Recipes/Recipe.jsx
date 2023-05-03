@@ -14,26 +14,22 @@ const Recipe = ({ recipe }) => {
     favorite,
   } = recipe;
   return (
-    <div className="card w-full bg-secondary shadow-xl image-full">
+    <div className="card card-compact w-full bg-base-100 shadow-lg">
       <figure>
-        <img src="" alt="food" />
+        <img src={img} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title mb-3">{recipe_name}</h2>
+        <h2 className="card-title">{recipe_name}</h2>
         <p>
-          <span className="font-semibold">Ingredients : </span>
-          {ingredients}
+          <span className="font-semibold">Ingredients :</span> {ingredients}
         </p>
-        <p className="mt-2">
-          <span className="font-semibold">Cooking method : </span>
+        <p>
+          <span className="font-semibold">Cooking method :</span>{" "}
           {cooking_method}
         </p>
         <div className="mt-1 flex justify-start items-center gap-2">
           <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
           <span>{rating}</span>
-        </div>
-        <div className="card-actions justify-start">
-          <button className="btn btn-outline text-white mt-5">Favorite </button>
         </div>
       </div>
     </div>

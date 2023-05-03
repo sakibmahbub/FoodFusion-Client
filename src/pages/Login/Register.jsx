@@ -127,7 +127,7 @@ const Register = () => {
               </p>
             </form>
             <div className="flex justify-center gap-2 mt-10">
-              <button onClick={handleGoogle} className="btn">
+              <button onClick={handleGoogle} className="btn btn-sm">
                 <FaGoogle />{" "}
                 <span
                   className="ml-1
@@ -136,7 +136,7 @@ const Register = () => {
                   Login with google
                 </span>
               </button>
-              <button onClick={handleGithub} className="btn">
+              <button onClick={handleGithub} className="btn btn-sm">
                 <FaGithub /> <span className="ml-1">Login with github</span>
               </button>
             </div>

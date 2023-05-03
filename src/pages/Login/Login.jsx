@@ -114,8 +114,8 @@ const Login = () => {
             </form>
 
             <div className="flex justify-center gap-2 mt-10">
-              <button onClick={handleGoogle} className="btn">
-                <FaGoogle />{" "}
+              <button onClick={handleGoogle} className="btn btn-sm">
+                <FaGoogle />
                 <span
                   className="ml-1
                 "
@@ -123,7 +123,7 @@ const Login = () => {
                   Login with google
                 </span>
               </button>
-              <button onClick={handleGithub} className="btn">
+              <button onClick={handleGithub} className="btn btn-sm">
                 <FaGithub /> <span className="ml-1">Login with github</span>
               </button>
             </div>

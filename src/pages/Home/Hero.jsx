@@ -10,16 +10,23 @@ const Hero = () => {
             <span className="text-secondary"> FoodFusion</span>
           </h1>
 
-          <p className="text-gray-500 lg:w-4/6 mb-4 lg:mb-12 text-center lg:text-left">
-            Welcome to FoodFusion, where food meets fusion! Our mission is to
-            bring together the best of traditional and modern recipes to create
-            delicious, mouth-watering dishes that will leave you wanting more.
+          <p className="text-gray-500 lg:w-4/5 mb-4 lg:mb-12 text-center lg:text-left">
+            FoodFusion is a website dedicated to sharing delicious and
+            innovative recipes from around the world. Our recipes are created
+            and tested by our team of experienced chefs, and we're always adding
+            new dishes to our collection. <br />
+            Whether you're a novice cook or a seasoned pro, our recipes are
+            designed to be easy to follow and accessible to everyone. We also
+            provide step-by-step videos to guide you through the cooking
+            process, so you can create restaurant-quality meals in your own
+            home. So if you're looking for inspiration in the kitchen, be sure
+            to check out our website for a wide range of mouth-watering recipes!
           </p>
           <div className="flex justify-center lg:justify-start">
             <button className="btn btn-secondary">Know More</button>
           </div>
         </div>
-        <div className="mx-auto lg:w-1/2">
+        <div className="mx-auto lg:w-1/2 shadow-lg">
           <img
             src="https://i.ibb.co/gDHDsXd/8.jpg"
             alt=""

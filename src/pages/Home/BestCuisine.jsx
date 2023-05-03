@@ -7,7 +7,7 @@ const BestCuisine = () => {
         Most Popular American Cuisines
       </h1>
       <div className="w-full mt-10 mx-auto grid justify-items-center justify-center sm:grid-cols-1 md:grid-cols-3 gap-10">
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-96 bg-base-100 shadow-lg">
           <figure>
             <img
               className="w-full h-48"
