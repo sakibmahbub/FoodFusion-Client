@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Recipe = ({ recipe }) => {
   const {
@@ -11,25 +13,48 @@ const Recipe = ({ recipe }) => {
     ingredients,
     cooking_method,
     rating,
-    favorite,
   } = recipe;
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleFavoriteClick = () => {
+    setIsFavorite(true);
+  };
+
+  useEffect(() => {
+    if (isFavorite) {
+      toast.success(`You have added ${recipe_name} to your favorite recipes!`, {
+        position: "top-right",
+      });
+    }
+  }, [isFavorite, recipe_name]);
+
   return (
     <div className="card card-compact w-full bg-base-100 shadow-lg">
       <figure>
-        <img src={img} />
+        <img src={img} alt={recipe_name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{recipe_name}</h2>
         <p>
-          <span className="font-semibold">Ingredients :</span> {ingredients}
+          <span className="font-semibold">Ingredients:</span> {ingredients}
         </p>
         <p>
-          <span className="font-semibold">Cooking method :</span>{" "}
+          <span className="font-semibold">Cooking method:</span>{" "}
           {cooking_method}
         </p>
-        <div className="mt-1 flex justify-start items-center gap-2">
-          <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
-          <span>{rating}</span>
+        <div className="flex justify-start items-center gap-5 mt-3">
+          <div className="mt-1 flex justify-start items-center gap-2">
+            <Rating style={{ maxWidth: 120 }} value={rating} readOnly />
+            <span>{rating}</span>
+          </div>
+          <button
+            className="btn btn-outline btn-sm mt-1 hover:btn-secondary"
+            disabled={isFavorite}
+            onClick={handleFavoriteClick}
+          >
+            {isFavorite ? "Favorited!" : "Favorite"}
+          </button>
         </div>
       </div>
     </div>
