@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className=" px-4 py-5 bg-red-50 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24 relative rounded-lg z-20">
@@ -33,11 +36,20 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="/src/assets/sakib.jpg" />
-              </div>
-            </label>
+            {user && (
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src="/src/assets/sakib.jpg" />
+                </div>
+              </label>
+            )}
+            {user ? (
+              <button className="btn btn-secondary">Logout</button>
+            ) : (
+              <Link to="/login">
+                <button className="btn btn-secondary">Login</button>
+              </Link>
+            )}
           </li>
         </ul>
 
