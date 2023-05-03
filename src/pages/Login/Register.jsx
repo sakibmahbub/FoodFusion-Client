@@ -1,9 +1,32 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+
+  const handleGoogle = () => {
+    googleSignIn()
+      .then((result) => {
+        const newUser = result.user;
+        console.log(newUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGithub = () => {
+    githubSignIn()
+      .then((result) => {
+        const newUser = result.user;
+        console.log(newUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -27,7 +50,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="mt-16">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-red-50 rounded-lg shadow-lg md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -103,6 +126,20 @@ const Register = () => {
                 </Link>
               </p>
             </form>
+            <div className="flex justify-center gap-2 mt-10">
+              <button onClick={handleGoogle} className="btn">
+                <FaGoogle />{" "}
+                <span
+                  className="ml-1
+                "
+                >
+                  Login with google
+                </span>
+              </button>
+              <button onClick={handleGithub} className="btn">
+                <FaGithub /> <span className="ml-1">Login with github</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

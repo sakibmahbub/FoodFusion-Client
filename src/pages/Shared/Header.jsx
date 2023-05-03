@@ -19,7 +19,6 @@ const Header = () => {
   return (
     <div className=" px-4 py-5 bg-red-50 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-24 relative rounded-lg z-20">
       <div className="relative flex items-center justify-between">
-        {/* Logo Section */}
         <Link to="/" className="inline-flex items-center">
           <h1 className="ml-2 text-3xl font-bold tracking-wide text-gray-800">
             Food<span className="text-secondary">Fusion</span>

@@ -1,14 +1,37 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
-  const { logIn } = useContext(AuthContext);
+  const { logIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  const handleGoogle = () => {
+    googleSignIn()
+      .then((result) => {
+        const newUser = result.user;
+        console.log(newUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGithub = () => {
+    githubSignIn()
+      .then((result) => {
+        const newUser = result.user;
+        console.log(newUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -89,6 +112,21 @@ const Login = () => {
               </p>
               <p className="text-sm font-light text-red-800 ">{error}</p>
             </form>
+
+            <div className="flex justify-center gap-2 mt-10">
+              <button onClick={handleGoogle} className="btn">
+                <FaGoogle />{" "}
+                <span
+                  className="ml-1
+                "
+                >
+                  Login with google
+                </span>
+              </button>
+              <button onClick={handleGithub} className="btn">
+                <FaGithub /> <span className="ml-1">Login with github</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
