@@ -3,14 +3,14 @@ import React from "react";
 const CulinarySkills = () => {
   return (
     <div className="my-container">
-      <div className="hero h-96 bg-red-50">
+      <div className="hero h-full bg-red-50">
         <div className="hero-content flex-col items-center lg:flex-row">
           <img
             src="https://i.ibb.co/Rg3DVzx/7.jpg"
             className="max-w-sm rounded-lg shadow-2xl"
           />
           <div className="p-5 mt-5">
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-3xl lg:text-4xl font-bold">
               Mastering the Art of Cooking: <br /> Tips to Improve Your Culinary
               Skills
             </h1>
