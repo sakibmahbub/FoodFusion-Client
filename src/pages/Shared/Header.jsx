@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const handleLogout = () => {
     logOut()
@@ -30,7 +30,9 @@ const Header = () => {
           <li>
             <NavLink
               to="/"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={
+                location.pathname === "/" ? "text-secondary" : "default"
+              }
             >
               Home
             </NavLink>
@@ -38,7 +40,9 @@ const Header = () => {
           <li>
             <NavLink
               to="/blog"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              className={
+                location.pathname === "/blog" ? "text-secondary" : "default"
+              }
             >
               Blog
             </NavLink>
