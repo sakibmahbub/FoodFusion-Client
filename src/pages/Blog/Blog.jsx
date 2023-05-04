@@ -1,11 +1,24 @@
 import React from "react";
+import html2pdf from "html2pdf.js";
+import { saveAs } from "file-saver";
 
 const Blog = () => {
+  const generatePDF = () => {
+    const element = document.getElementById("blog-content");
+    const opt = {
+      margin: 0.5,
+      filename: "blog.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    html2pdf().set(opt).from(element).save();
+  };
+
   return (
     <div className="my-container">
-      {" "}
       <div className="flex min-h-screen items-center justify-center my-10  text-gray-900">
-        <div className="flex flex-col  lg:w-2/3 p-6 sm:p-10 ">
+        <div id="blog-content" className="flex flex-col  lg:w-2/3 p-6 sm:p-10 ">
           <div className="border-2 border-red-200 shadow-lg rounded p-5 my-5">
             <h3 className="text-2xl font-bold mb-5">
               1. Tell us the differences between uncontrolled and controlled
@@ -54,6 +67,14 @@ const Blog = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="flex flex-col justify-center items-center h-auto">
+        <h1 className="text-2xl lg:text-4xl font-bold mb-3 lg:mb-8 lg:text-left leading-6">
+          Download this page
+        </h1>
+        <button className="btn btn-secondary" onClick={generatePDF}>
+          Download PDF
+        </button>
       </div>
     </div>
   );

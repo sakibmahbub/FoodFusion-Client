@@ -3,6 +3,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Recipe = ({ recipe }) => {
   const {
@@ -32,7 +33,7 @@ const Recipe = ({ recipe }) => {
   return (
     <div className="card card-compact w-full bg-base-100 shadow-lg">
       <figure>
-        <img src={img} alt={recipe_name} />
+        <LazyLoadImage src={img} effect="opacity" alt={recipe_name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{recipe_name}</h2>

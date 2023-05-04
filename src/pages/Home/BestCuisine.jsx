@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const BestCuisine = () => {
   return (
@@ -9,10 +10,10 @@ const BestCuisine = () => {
       <div className="w-full mt-10 mx-auto grid justify-items-center justify-center sm:grid-cols-1 md:grid-cols-3 gap-10">
         <div className="card card-compact w-96 bg-base-100 shadow-lg">
           <figure>
-            <img
+            <LazyLoadImage
               className="w-full h-48"
               src="https://i.ibb.co/NxdzFxh/1.jpg"
-              alt="Shoes"
+              effect="opacity"
             />
           </figure>
           <div className="card-body">
@@ -27,10 +28,10 @@ const BestCuisine = () => {
         </div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <figure>
-            <img
+            <LazyLoadImage
               className="w-full h-48"
               src="https://i.ibb.co/fMKQrQb/4.jpg"
-              alt="Shoes"
+              effect="opacity"
             />
           </figure>
           <div className="card-body">
@@ -45,10 +46,10 @@ const BestCuisine = () => {
         </div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <figure>
-            <img
+            <LazyLoadImage
               className="w-full h-48"
               src="https://i.ibb.co/F8L7DrL/3.jpg"
-              alt="Shoes"
+              effect="opacity"
             />
           </figure>
           <div className="card-body">

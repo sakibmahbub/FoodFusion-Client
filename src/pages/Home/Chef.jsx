@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaThumbsUp } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Chef = ({ chef }) => {
   const { id, picture, name, experience, recipes, likes } = chef;
   return (
     <div className="card w-full lg:card-side bg-base-100 shadow-lg">
       <figure>
-        <img src={picture} className="object-cover w-48 h-full " alt="Album" />
+        <LazyLoadImage
+          src={picture}
+          effect="opacity"
+          alt="Album"
+          className="object-cover w-48 h-full"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title mb-5">{name}</h2>

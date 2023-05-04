@@ -10,7 +10,7 @@ const ChefDetails = () => {
   const [chefs, setChefs] = useState([]);
   const [selectedChef, setSelectedChef] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
+    fetch("https://food-fusion-server-sakibmahbub.vercel.app/chefs")
       .then((res) => res.json())
       .then((data) => {
         setChefs(data);
@@ -18,7 +18,7 @@ const ChefDetails = () => {
         if (foundChef) {
           setSelectedChef(foundChef);
         } else {
-          setSelectedChef("not-found");
+          setSelectedChef("Chef not found");
         }
       })
       .catch((error) => console.log(error));

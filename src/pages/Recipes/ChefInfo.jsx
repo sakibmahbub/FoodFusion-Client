@@ -1,5 +1,6 @@
 import React from "react";
-import { FaHamburger, FaThumbsUp } from "react-icons/fa";
+import { FaThumbsUp } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefInfo = ({ selectedChef }) => {
   const { picture, name, experience, recipes, likes, bio } = selectedChef;
@@ -8,7 +9,12 @@ const ChefInfo = ({ selectedChef }) => {
     <div className="mb-20">
       <div className="hero md:w-FULL rounded-lg p-10 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={picture} className="max-w-sm rounded-lg shadow-2xl" />
+          <LazyLoadImage
+            src={picture}
+            effect="opacity"
+            alt="chef"
+            className="max-w-sm rounded-lg shadow-2xl"
+          />
           <div>
             <h1 className="text-5xl font-bold">{name}</h1>
             <p className="my-5  lg:w-4/5">{bio}</p>
