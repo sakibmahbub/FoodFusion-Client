@@ -6,7 +6,7 @@ const ChefInfo = ({ selectedChef }) => {
 
   return (
     <div className="mb-20">
-      <div className="hero md:w-full rounded-lg p-10 min-h-screen">
+      <div className="hero md:w-FULL rounded-lg p-10 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={picture} className="max-w-sm rounded-lg shadow-2xl" />
           <div>

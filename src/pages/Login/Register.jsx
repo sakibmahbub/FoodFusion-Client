@@ -4,7 +4,9 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
+    useContext(AuthContext);
+  const [createdUser, setCreatedUser] = useState(null);
 
   const handleGoogle = () => {
     googleSignIn()
@@ -30,8 +32,6 @@ const Register = () => {
 
   const handleRegister = (event) => {
     event.preventDefault();
-    const [success, setSuccess] = useState("");
-
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -41,7 +41,10 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
-        setSuccess("User created successfully.");
+        setCreatedUser(createdUser);
+        return updateUserProfile(name, photo);
+      })
+      .then(() => {
         console.log(createdUser);
       })
       .catch((error) => {
